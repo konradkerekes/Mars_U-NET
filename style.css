@@ -1,0 +1,142 @@
+/* Alapbeállítások és betűtípus */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0c0a1a;
+    color: #fff;
+    margin: 0;
+    padding: 40px;
+}
+
+/* A háttér "Blob"-ok */
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.blob1 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(180deg, rgba(255, 69, 0, 0.4), rgba(255, 165, 0, 0.2));
+    border-radius: 50%;
+    filter: blur(150px);
+    top: -100px;
+    left: -100px;
+}
+.blob2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(0, 191, 255, 0.3), rgba(0, 0, 139, 0.1));
+    border-radius: 50%;
+    filter: blur(120px);
+    bottom: -50px;
+    right: -50px;
+}
+
+/* === A GLASSMORPHISM KÁRTYA === */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+
+    /* A "Frosted Glass" effektus */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Feltöltési terület */
+.upload-area {
+    margin-top: 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s;
+}
+.upload-area:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+#upload-label {
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+}
+#image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: none; /* Alapból rejtett */
+}
+
+/* Gomb */
+button {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    background: #007aff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+button:not(:disabled):hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Eredmények */
+.results-area {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+.result-box {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+#mask-image {
+    width: 100%;
+    border-radius: 8px;
+    image-rendering: pixelated;
+}
+
+/* Mobil nézet optimalizálás */
+@media (max-width: 768px) {
+    .results-area {
+        grid-template-columns: 1fr; /* Egymás alá kerülnek */
+    }
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}

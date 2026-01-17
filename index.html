@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Surface Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+    </div>
+
+    <div class="container">
+        <h1>Mars Surface Analyzer 🚀</h1>
+        <p>Upload an image from the Perseverance or Curiosity rover for the model to analyze.</p>
+
+        <div class="upload-area" id="upload-area">
+            <input type="file" id="file-input" accept="image/*" hidden>
+            <label for="file-input" id="upload-label">Click or drag image to upload</label>
+            <img id="image-preview" src="" alt="Uploaded image preview">
+        </div>
+
+        <button id="predict-button" disabled>Start Analysis</button>
+
+        <div class="results-area" id="results-area">
+            <div class="result-box" id="result-chart">
+                <h3>Area Distribution</h3>
+                <canvas id="stats-chart"></canvas>
+            </div>
+            <div class="result-box" id="result-mask">
+                <h3>Generated Mask</h3>
+                <img id="mask-image" src="" alt="Generated segmentation mask">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

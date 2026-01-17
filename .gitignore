@@ -1,0 +1,34 @@
+# --- 1. Python rendszerfájlok (ezek nem kellenek a repóba) ---
+__pycache__/
+*.pyc
+
+# --- 2. Virtuális Környezet (ez több ezer fájl, TILOS feltölteni) ---
+.venv/
+venv/
+env/
+
+# --- 3. Adathalmazok (Túl nagyok a GitHubnak) ---
+raw_dataset/
+clean_dataset/
+data/
+*.zip
+
+# --- 4. Modellek és Checkpointok (Nagy bináris fájlok) ---
+# A GitHub limitje 100MB. Ha a modelled ennél nagyobb,
+# nem fogja engedni feltölteni, ezért inkább ignoráljuk.
+checkpoints/
+models/
+*.h5
+*.weights.h5
+
+# --- 5. Logok és Statisztikák ---
+training_log.csv
+*.log
+
+# --- 6. IDE beállítások (PyCharm, VS Code) ---
+.idea/
+.vscode/
+
+# --- 7. Operációs rendszer szemetelése ---
+.DS_Store
+Thumbs.db
